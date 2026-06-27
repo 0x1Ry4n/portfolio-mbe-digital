@@ -60,7 +60,7 @@ export function Process() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <div key={step.number} className="reveal relative">
               <div className="relative">
                 <div className="flex items-center gap-4 mb-5">
@@ -69,8 +69,14 @@ export function Process() {
                   </span>
                   <div className="w-2.5 h-2.5 rounded-full bg-primary" />
                 </div>
-                <h3 className="font-bold text-dark text-xl mb-3">{step.title}</h3>
-                <p className="text-dark/55 text-sm leading-relaxed">{step.description}</p>
+
+                <h3 className="font-bold text-dark text-xl mb-3">
+                  {step.title}
+                </h3>
+
+                <p className="text-dark/55 text-sm leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             </div>
           ))}
