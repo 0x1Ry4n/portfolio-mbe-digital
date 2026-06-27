@@ -9,6 +9,14 @@
     --color-dark: #201F2D;
     --color-white: #FFFFFF;
     --navbar-h: 80px;
+
+    --bg: #FFFFFF;
+    --fg: #201F2D;
+  }
+
+  :root.dark {
+    --bg: #16151F;
+    --fg: #ECECF1;
   }
 
   * {
@@ -25,9 +33,10 @@
 
   body {
     font-family: 'Afacad', system-ui, sans-serif;
-    background-color: #FFFFFF;
-    color: #201F2D;
+    background-color: var(--bg);
+    color: var(--fg);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5 {
