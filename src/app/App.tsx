@@ -1,6 +1,7 @@
 import { useLenis } from '@/hooks/useLenis'
 import { ScrollProgress } from '@/components/effects/ScrollProgress'
 import { Marquee } from '@/components/effects/Marquee'
+import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { Navbar } from '@/features/navbar/Navbar'
 import { Hero } from '@/features/hero/Hero'
 import { About } from '@/features/about/About'
@@ -32,6 +33,7 @@ export default function App() {
         <Cta />
         <Footer />
       </main>
+      <WhatsAppButton />
     </>
   )
 }
