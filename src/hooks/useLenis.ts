@@ -5,6 +5,36 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+// Instância única para que Navbar/Footer/CTAs disparem scroll suave
+// pelo mesmo motor (Lenis), evitando conflito com o scrollIntoView nativo.
+let lenisInstance: Lenis | null = null
+
+const NAVBAR_OFFSET = 80
+
+/**
+ * Faz scroll suave até uma seção (ex.: '#about') usando o Lenis.
+ * Faz fallback para scrollIntoView caso o Lenis ainda não exista.
+ */
+export function scrollToSection(target: string) {
+  const el = document.querySelector(target)
+  if (!el) return
+
+  if (lenisInstance) {
+    lenisInstance.scrollTo(el as HTMLElement, {
+      offset: -NAVBAR_OFFSET,
+      duration: 1.2,
+    })
+  } else {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+/** Scroll suave até o topo da página. */
+export function scrollToTop() {
+  if (lenisInstance) lenisInstance.scrollTo(0, { duration: 1.2 })
+  else window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
 export function useLenis() {
   useEffect(() => {
     const lenis = new Lenis({
@@ -13,6 +43,7 @@ export function useLenis() {
       orientation: 'vertical',
       smoothWheel: true,
     })
+    lenisInstance = lenis
 
     // Sincroniza Lenis com ScrollTrigger para que todos os triggers
     // leiam a posição correta do scroll suave.
@@ -33,6 +64,7 @@ export function useLenis() {
       window.clearTimeout(refreshTimeout)
       gsap.ticker.remove(tick)
       lenis.destroy()
+      lenisInstance = null
     }
   }, [])
 }

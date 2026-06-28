@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Plus, Minus } from 'lucide-react'
 import { useRevealAnimation } from '@/animations/useRevealAnimation'
+import { scrollToSection } from '@/hooks/useLenis'
 import { cn } from '@/lib/utils'
 import type { FaqItem } from '@/types'
 
@@ -86,7 +87,7 @@ export function Faq() {
       style={{
         paddingTop: 'clamp(5rem, 10vw, 10rem)',
         paddingBottom: 'clamp(5rem, 10vw, 10rem)',
-        backgroundColor: '#F8F8FB',
+        backgroundColor: 'var(--section-alt)',
       }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -108,14 +109,14 @@ export function Faq() {
               Atendemos de forma consultiva e sem compromisso.
             </p>
             <button
-              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => scrollToSection('#contact')}
               className="reveal inline-flex items-center gap-2 bg-primary text-white font-medium px-6 py-3 rounded-full hover:bg-primary/90 transition-colors text-sm"
             >
               Falar com especialista
             </button>
           </div>
 
-          <div className="reveal bg-white dark:bg-[#1c1b26] rounded-3xl p-8 border border-dark/[0.06] dark:border-white/[0.06]">
+          <div className="reveal bg-white dark:bg-[var(--surface)] rounded-3xl p-8 border border-dark/[0.06] dark:border-white/10">
             {faqs.map((faq, index) => (
               <FaqAccordion
                 key={faq.question}

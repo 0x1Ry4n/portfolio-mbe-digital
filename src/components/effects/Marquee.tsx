@@ -27,7 +27,7 @@ export function Marquee({ reverse = false, dark = false, className }: MarqueePro
         'w-full overflow-hidden py-5 border-y',
         dark
           ? 'bg-dark border-white/[0.06]'
-          : 'bg-white border-dark/[0.06]',
+          : 'bg-white dark:bg-[var(--section-alt)] border-dark/[0.06] dark:border-white/10',
         className,
       )}
       aria-hidden="true"
@@ -43,12 +43,12 @@ export function Marquee({ reverse = false, dark = false, className }: MarqueePro
             <LogoMark
               color={dark ? 'white' : 'primary'}
               size={16}
-              className="opacity-40"
+              className="opacity-40 dark:opacity-60"
             />
             <span
               className={cn(
                 'text-sm font-medium whitespace-nowrap tracking-wide',
-                dark ? 'text-white/60' : 'text-dark/50',
+                dark ? 'text-white/60' : 'text-dark/50 dark:text-white/60',
               )}
             >
               {item}

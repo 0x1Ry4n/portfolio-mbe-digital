@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useNavbarAnimation } from '@/animations/useNavbarAnimation'
 import { useTheme } from '@/hooks/useTheme'
+import { scrollToSection } from '@/hooks/useLenis'
 import { Logo } from '@/components/ui/Logo'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import type { NavItem } from '@/types'
@@ -22,7 +23,7 @@ export function Navbar() {
 
   const handleNavClick = (href: string) => {
     setIsOpen(false)
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    scrollToSection(href)
   }
 
   return (

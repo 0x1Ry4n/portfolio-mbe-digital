@@ -40,7 +40,7 @@ export function Testimonials() {
     <section
       ref={containerRef}
       id="testimonials"
-      className="bg-white dark:bg-[#1c1b26]"
+      className="bg-white dark:bg-[var(--surface)]"
       style={{
         paddingTop: 'clamp(5rem, 10vw, 10rem)',
         paddingBottom: 'clamp(5rem, 10vw, 10rem)',
@@ -65,7 +65,7 @@ export function Testimonials() {
           {testimonials.map((t) => (
             <blockquote
               key={t.name}
-              className="reveal bg-dark/[0.02] dark:bg-white/[0.02] border border-dark/[0.06] dark:border-white/[0.06] rounded-3xl p-8 flex flex-col"
+              className="reveal bg-dark/[0.02] dark:bg-white/[0.05] border border-dark/[0.06] dark:border-white/10 rounded-3xl p-8 flex flex-col"
             >
               <Quote
                 size={28}

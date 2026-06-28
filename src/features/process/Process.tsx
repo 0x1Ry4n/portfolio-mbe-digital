@@ -34,7 +34,7 @@ export function Process() {
     <section
       ref={containerRef}
       id="process"
-      className="bg-white dark:bg-[#1c1b26]"
+      className="bg-white dark:bg-[var(--surface)]"
       style={{
         paddingTop: 'clamp(5rem, 10vw, 10rem)',
         paddingBottom: 'clamp(5rem, 10vw, 10rem)',
@@ -64,7 +64,7 @@ export function Process() {
             <div key={step.number} className="reveal relative">
               <div className="relative">
                 <div className="flex items-center gap-4 mb-5">
-                  <span className="text-5xl font-black text-primary/15 leading-none select-none">
+                  <span className="text-5xl font-black text-primary/15 dark:text-primary/45 leading-none select-none">
                     {step.number}
                   </span>
                   <div className="w-2.5 h-2.5 rounded-full bg-primary" />

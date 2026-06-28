@@ -64,16 +64,17 @@ export function MouseBackground() {
       className="absolute inset-0 overflow-hidden pointer-events-none"
       aria-hidden="true"
     >
-      {/* Orb principal — azul primário */}
+      {/* Orb principal — azul primário (mais intenso no dark) */}
       <div
         ref={orbBlueRef}
-        className="absolute rounded-full"
+        className="absolute rounded-full opacity-100 dark:opacity-[0.85] mix-blend-normal dark:mix-blend-screen"
         style={{
-          width: 700,
-          height: 700,
-          marginLeft: -350,
-          marginTop: -350,
-          background: 'radial-gradient(circle, rgba(34,64,194,0.10) 0%, rgba(34,64,194,0.04) 40%, transparent 70%)',
+          width: 760,
+          height: 760,
+          marginLeft: -380,
+          marginTop: -380,
+          background:
+            'radial-gradient(circle, rgba(34,64,194,0.22) 0%, rgba(34,64,194,0.08) 45%, transparent 70%)',
           willChange: 'transform',
         }}
       />
@@ -81,23 +82,24 @@ export function MouseBackground() {
       {/* Orb secundário — verde accent, lag maior */}
       <div
         ref={orbGreenRef}
-        className="absolute rounded-full"
+        className="absolute rounded-full opacity-100 dark:opacity-[0.85] mix-blend-normal dark:mix-blend-screen"
         style={{
-          width: 500,
-          height: 500,
-          marginLeft: -250,
-          marginTop: -250,
-          background: 'radial-gradient(circle, rgba(126,217,87,0.10) 0%, rgba(126,217,87,0.04) 40%, transparent 70%)',
+          width: 560,
+          height: 560,
+          marginLeft: -280,
+          marginTop: -280,
+          background:
+            'radial-gradient(circle, rgba(126,217,87,0.22) 0%, rgba(126,217,87,0.08) 45%, transparent 70%)',
           willChange: 'transform',
         }}
       />
 
-      {/* Grid estático sutil */}
+      {/* Grid estático — usa cor da linha por tema */}
       <div
-        className="absolute inset-0 opacity-[0.025]"
+        className="absolute inset-0 opacity-[0.04] dark:opacity-[0.07]"
         style={{
           backgroundImage:
-            'linear-gradient(#201F2D 1px, transparent 1px), linear-gradient(90deg, #201F2D 1px, transparent 1px)',
+            'linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)',
           backgroundSize: '80px 80px',
         }}
       />

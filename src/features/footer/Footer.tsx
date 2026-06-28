@@ -1,5 +1,6 @@
 import { Instagram, Linkedin, Mail, ArrowUp } from 'lucide-react'
 import { Logo } from '@/components/ui/Logo'
+import { scrollToSection, scrollToTop } from '@/hooks/useLenis'
 
 const footerLinks = {
   navegacao: [
@@ -27,11 +28,7 @@ const socialLinks = [
 ]
 
 export function Footer() {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
-
-  const handleNavClick = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const handleNavClick = (href: string) => scrollToSection(href)
 
   return (
     <footer className="bg-dark text-white">
@@ -121,7 +118,7 @@ export function Footer() {
               </li>
               <li className="pt-2">
                 <button
-                  onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => handleNavClick('#contact')}
                   className="inline-flex items-center gap-1.5 text-accent text-sm font-medium hover:text-accent/80 transition-colors"
                 >
                   Solicitar diagnóstico

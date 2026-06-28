@@ -3,6 +3,7 @@ import { useHeroAnimation } from '@/animations/useHeroAnimation'
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
 import { LogoMark } from '@/components/ui/Logo'
 import { MouseBackground } from '@/components/effects/MouseBackground'
+import { scrollToSection } from '@/hooks/useLenis'
 
 const stats = [
   { icon: TrendingUp, value: 300, suffix: '%', prefix: '+', label: 'Crescimento médio' },
@@ -13,15 +14,13 @@ const stats = [
 export function Hero() {
   const containerRef = useHeroAnimation()
 
-  const handleCta = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
-  }
+  const handleCta = (href: string) => scrollToSection(href)
 
   return (
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-[#1c1b26]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-[var(--surface)]"
       style={{ paddingTop: 'var(--navbar-h)' }}
     >
       {/* Fundo interativo que segue o cursor */}

@@ -18,7 +18,7 @@ export function About() {
     <section
       ref={containerRef}
       id="about"
-      className="py-section bg-white dark:bg-[#1c1b26]"
+      className="py-section bg-white dark:bg-[var(--surface)]"
       style={{ paddingTop: 'clamp(5rem, 10vw, 10rem)', paddingBottom: 'clamp(5rem, 10vw, 10rem)' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -57,7 +57,7 @@ export function About() {
           </div>
 
           <div className="reveal">
-            <div className="bg-dark/[0.02] dark:bg-white/[0.02] border border-dark/[0.06] dark:border-white/[0.06] rounded-3xl p-8 lg:p-10">
+            <div className="bg-dark/[0.02] dark:bg-white/[0.05] border border-dark/[0.06] dark:border-white/10 rounded-3xl p-8 lg:p-10">
               <p className="text-sm font-medium text-dark/40 dark:text-white/40 mb-6 uppercase tracking-widest">
                 Nossos diferenciais
               </p>
@@ -73,7 +73,7 @@ export function About() {
                 ))}
               </ul>
 
-              <div className="mt-10 pt-8 border-t border-dark/[0.06] dark:border-white/[0.06] grid grid-cols-2 gap-6">
+              <div className="mt-10 pt-8 border-t border-dark/[0.06] dark:border-white/10 grid grid-cols-2 gap-6">
                 <div>
                   <p className="text-3xl font-black text-dark dark:text-white" style={{ fontFamily: "'Archivo Black', sans-serif" }}>
                     <AnimatedCounter value={50} suffix="+" />

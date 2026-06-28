@@ -50,7 +50,7 @@ export function Portfolio() {
       style={{
         paddingTop: 'clamp(5rem, 10vw, 10rem)',
         paddingBottom: 'clamp(5rem, 10vw, 10rem)',
-        backgroundColor: '#F8F8FB',
+        backgroundColor: 'var(--section-alt)',
       }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -78,19 +78,19 @@ export function Portfolio() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="reveal group bg-white dark:bg-[#1c1b26] rounded-3xl p-8 border border-dark/[0.06] dark:border-white/[0.06] hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer"
+              className="reveal group bg-white dark:bg-[var(--surface)] rounded-3xl p-8 border border-dark/[0.06] dark:border-white/10 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer"
             >
               <div className="flex items-start justify-between mb-6">
                 <span className="text-xs font-medium text-primary/80 uppercase tracking-widest">
                   {project.category}
                 </span>
-                <div className="w-9 h-9 rounded-full border border-dark/10 dark:border-white/10 flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all">
+                <div className="w-9 h-9 rounded-full border border-dark/10 dark:border-white/20 text-dark dark:text-white flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <ArrowUpRight size={16} />
                 </div>
               </div>
 
               <div className="mb-6">
-                <div className="text-5xl font-black text-primary/12 leading-none mb-2 select-none">
+                <div className="text-5xl font-black text-primary/12 dark:text-primary/45 leading-none mb-2 select-none">
                   {project.highlight}
                 </div>
                 <p className="text-xs text-dark/40 dark:text-white/40 uppercase tracking-widest">

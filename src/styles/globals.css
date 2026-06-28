@@ -12,11 +12,21 @@
 
     --bg: #FFFFFF;
     --fg: #201F2D;
+    --grid-line: #201F2D;
+    --section-alt: #F8F8FB;
   }
 
   :root.dark {
-    --bg: #16151F;
-    --fg: #ECECF1;
+    /* Escala dark moderna, com leve tom do brand (não preto puro) */
+    --bg: #16151F;          /* página */
+    --fg: #ECECF3;
+    --grid-line: #FFFFFF;
+    --section-alt: #1B1A26; /* seções alternadas */
+    --surface: #211F2E;     /* superfícies elevadas / cards */
+  }
+
+  :root {
+    --surface: #FFFFFF;
   }
 
   * {
@@ -49,9 +59,41 @@
     scroll-margin-top: var(--navbar-h);
   }
 
+  /* Seleção de texto: cor translúcida do brand, sem sobrepor a cor do texto */
   ::selection {
-    background-color: #2240C2;
-    color: #FFFFFF;
+    background-color: rgba(34, 64, 194, 0.28);
+  }
+
+  :root.dark ::selection {
+    background-color: rgba(126, 217, 87, 0.30);
+  }
+
+  /* Barra de rolagem customizada com a identidade do site */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2240C2 0%, #7ED957 100%);
+    border-radius: 9999px;
+    border: 3px solid var(--bg);
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #1b34a0 0%, #6cc746 100%);
+    border: 2px solid var(--bg);
+    background-clip: padding-box;
   }
 }
 
