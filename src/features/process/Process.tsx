@@ -34,7 +34,7 @@ export function Process() {
     <section
       ref={containerRef}
       id="process"
-      className="bg-white"
+      className="bg-white dark:bg-[#1c1b26]"
       style={{
         paddingTop: 'clamp(5rem, 10vw, 10rem)',
         paddingBottom: 'clamp(5rem, 10vw, 10rem)',
@@ -47,13 +47,13 @@ export function Process() {
             Como trabalhamos
           </div>
           <h2
-            className="reveal font-bold text-dark leading-tight mb-6"
+            className="reveal font-bold text-dark dark:text-white leading-tight mb-6"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
           >
             Processo claro.<br />
             <span className="text-primary">Resultados previsíveis.</span>
           </h2>
-          <p className="reveal text-dark/60 text-lg leading-relaxed">
+          <p className="reveal text-dark/60 dark:text-white/60 text-lg leading-relaxed">
             Seguimos um método estruturado que garante eficiência, transparência
             e resultados mensuráveis em cada projeto.
           </p>
@@ -70,11 +70,11 @@ export function Process() {
                   <div className="w-2.5 h-2.5 rounded-full bg-primary" />
                 </div>
 
-                <h3 className="font-bold text-dark text-xl mb-3">
+                <h3 className="font-bold text-dark dark:text-white text-xl mb-3">
                   {step.title}
                 </h3>
 
-                <p className="text-dark/55 text-sm leading-relaxed">
+                <p className="text-dark/55 dark:text-white/55 text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>

@@ -53,7 +53,7 @@ export function LogoMark({ color = 'primary', size = 40, className }: Pick<LogoP
 
 export function Logo({ variant = 'full', color = 'dark', className, size = 36 }: LogoProps) {
   const textColor =
-    color === 'white' ? 'text-white' : color === 'primary' ? 'text-primary' : 'text-dark'
+    color === 'white' ? 'text-white' : color === 'primary' ? 'text-primary' : 'text-dark dark:text-white'
 
   if (variant === 'mark') return <LogoMark color={color} size={size} className={className} />
 

@@ -45,20 +45,20 @@ interface FaqItemProps {
 
 function FaqAccordion({ item, isOpen, onToggle }: FaqItemProps) {
   return (
-    <div className="border-b border-dark/[0.08] last:border-0">
+    <div className="border-b border-dark/[0.08] dark:border-white/[0.08] last:border-0">
       <button
         onClick={onToggle}
         className="flex items-center justify-between w-full py-6 text-left gap-4"
         aria-expanded={isOpen}
       >
-        <span className={cn('font-medium text-base transition-colors', isOpen ? 'text-primary' : 'text-dark')}>
+        <span className={cn('font-medium text-base transition-colors', isOpen ? 'text-primary' : 'text-dark dark:text-white')}>
           {item.question}
         </span>
-        <span className="shrink-0 w-7 h-7 rounded-full border border-dark/10 flex items-center justify-center">
+        <span className="shrink-0 w-7 h-7 rounded-full border border-dark/10 dark:border-white/10 flex items-center justify-center">
           {isOpen ? (
             <Minus size={14} className="text-primary" />
           ) : (
-            <Plus size={14} className="text-dark/50" />
+            <Plus size={14} className="text-dark/50 dark:text-white/50" />
           )}
         </span>
       </button>
@@ -69,7 +69,7 @@ function FaqAccordion({ item, isOpen, onToggle }: FaqItemProps) {
           isOpen ? 'max-h-60 opacity-100 pb-6' : 'max-h-0 opacity-0',
         )}
       >
-        <p className="text-dark/60 text-sm leading-relaxed">{item.answer}</p>
+        <p className="text-dark/60 dark:text-white/60 text-sm leading-relaxed">{item.answer}</p>
       </div>
     </div>
   )
@@ -97,13 +97,13 @@ export function Faq() {
               Perguntas frequentes
             </div>
             <h2
-              className="reveal font-bold text-dark leading-tight mb-6"
+              className="reveal font-bold text-dark dark:text-white leading-tight mb-6"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
             >
               Dúvidas?<br />
               <span className="text-primary">Respondemos.</span>
             </h2>
-            <p className="reveal text-dark/60 text-lg leading-relaxed mb-8">
+            <p className="reveal text-dark/60 dark:text-white/60 text-lg leading-relaxed mb-8">
               Se tiver outras dúvidas, entre em contato.
               Atendemos de forma consultiva e sem compromisso.
             </p>
@@ -115,7 +115,7 @@ export function Faq() {
             </button>
           </div>
 
-          <div className="reveal bg-white rounded-3xl p-8 border border-dark/[0.06]">
+          <div className="reveal bg-white dark:bg-[#1c1b26] rounded-3xl p-8 border border-dark/[0.06] dark:border-white/[0.06]">
             {faqs.map((faq, index) => (
               <FaqAccordion
                 key={faq.question}

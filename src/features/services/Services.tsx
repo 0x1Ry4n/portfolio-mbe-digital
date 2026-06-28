@@ -81,13 +81,13 @@ export function Services() {
             O que fazemos
           </div>
           <h2
-            className="reveal font-bold text-dark leading-tight mb-6"
+            className="reveal font-bold text-dark dark:text-white leading-tight mb-6"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
           >
             Serviços pensados para{' '}
             <span className="text-primary">profissionais da saúde.</span>
           </h2>
-          <p className="reveal text-dark/60 text-lg leading-relaxed">
+          <p className="reveal text-dark/60 dark:text-white/60 text-lg leading-relaxed">
             Cada serviço é desenvolvido com a realidade do setor da saúde em mente.
             Entendemos suas demandas e restrições.
           </p>
@@ -97,13 +97,13 @@ export function Services() {
           {services.map(({ icon: Icon, title, description }) => (
             <article
               key={title}
-              className="reveal group bg-white rounded-2xl p-6 border border-dark/[0.06] hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+              className="reveal group bg-white dark:bg-[#1c1b26] rounded-2xl p-6 border border-dark/[0.06] dark:border-white/[0.06] hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
             >
               <div className="w-11 h-11 rounded-xl bg-primary/8 flex items-center justify-center mb-5 group-hover:bg-primary/12 transition-colors">
                 <Icon size={20} className="text-primary" />
               </div>
-              <h3 className="font-semibold text-dark mb-3 text-base">{title}</h3>
-              <p className="text-dark/55 text-sm leading-relaxed">{description}</p>
+              <h3 className="font-semibold text-dark dark:text-white mb-3 text-base">{title}</h3>
+              <p className="text-dark/55 dark:text-white/55 text-sm leading-relaxed">{description}</p>
             </article>
           ))}
         </div>

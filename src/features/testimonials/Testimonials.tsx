@@ -40,7 +40,7 @@ export function Testimonials() {
     <section
       ref={containerRef}
       id="testimonials"
-      className="bg-white"
+      className="bg-white dark:bg-[#1c1b26]"
       style={{
         paddingTop: 'clamp(5rem, 10vw, 10rem)',
         paddingBottom: 'clamp(5rem, 10vw, 10rem)',
@@ -53,7 +53,7 @@ export function Testimonials() {
             Depoimentos
           </div>
           <h2
-            className="reveal font-bold text-dark leading-tight"
+            className="reveal font-bold text-dark dark:text-white leading-tight"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
           >
             O que dizem nossos{' '}
@@ -65,7 +65,7 @@ export function Testimonials() {
           {testimonials.map((t) => (
             <blockquote
               key={t.name}
-              className="reveal bg-dark/[0.02] border border-dark/[0.06] rounded-3xl p-8 flex flex-col"
+              className="reveal bg-dark/[0.02] dark:bg-white/[0.02] border border-dark/[0.06] dark:border-white/[0.06] rounded-3xl p-8 flex flex-col"
             >
               <Quote
                 size={28}
@@ -73,7 +73,7 @@ export function Testimonials() {
                 aria-hidden="true"
               />
 
-              <p className="text-dark/70 text-base leading-relaxed mb-8">
+              <p className="text-dark/70 dark:text-white/70 text-base leading-relaxed mb-8">
                 {t.content}
               </p>
 
@@ -85,10 +85,10 @@ export function Testimonials() {
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <cite className="not-italic font-semibold text-dark text-sm">
+                  <cite className="not-italic font-semibold text-dark dark:text-white text-sm">
                     {t.name}
                   </cite>
-                  <p className="text-dark/50 text-xs mt-0.5">
+                  <p className="text-dark/50 dark:text-white/50 text-xs mt-0.5">
                     {t.role} · {t.company}
                   </p>
                 </div>

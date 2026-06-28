@@ -21,7 +21,7 @@ export function Hero() {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-white"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-[#1c1b26]"
       style={{ paddingTop: 'var(--navbar-h)' }}
     >
       {/* Fundo interativo que segue o cursor */}
@@ -40,7 +40,7 @@ export function Hero() {
 
           {/* Badge animado com dot pulsante */}
           <div className="hero-eyebrow mb-8">
-            <div className="inline-flex items-center gap-2.5 bg-accent/10 border border-accent/25 text-dark/75 text-xs font-semibold px-4 py-2 rounded-full">
+            <div className="inline-flex items-center gap-2.5 bg-accent/10 border border-accent/25 text-dark/75 dark:text-white/75 text-xs font-semibold px-4 py-2 rounded-full">
               <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
@@ -51,7 +51,7 @@ export function Hero() {
 
           {/* Headline com word-by-word reveal */}
           <h1
-            className="hero-title leading-[1.05] text-dark mb-7"
+            className="hero-title leading-[1.05] text-dark dark:text-white mb-7"
             style={{ fontSize: 'clamp(2.4rem, 5.5vw, 4.75rem)' }}
           >
             {[
@@ -70,7 +70,7 @@ export function Hero() {
 
           {/* Subtítulo */}
           <p
-            className="hero-subtitle text-dark/55 leading-relaxed mb-10 max-w-xl"
+            className="hero-subtitle text-dark/55 dark:text-white/55 leading-relaxed mb-10 max-w-xl"
             style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)' }}
           >
             Desenvolvemos estratégias de marketing digital específicas para clínicas,
@@ -88,7 +88,7 @@ export function Hero() {
             </button>
             <button
               onClick={() => handleCta('#portfolio')}
-              className="inline-flex items-center justify-center gap-2 border border-dark/12 text-dark/80 font-medium px-7 py-3.5 rounded-full hover:border-dark/25 hover:bg-dark/[0.02] transition-all text-sm"
+              className="inline-flex items-center justify-center gap-2 border border-dark/12 dark:border-white/12 text-dark/80 dark:text-white/80 font-medium px-7 py-3.5 rounded-full hover:border-dark/25 dark:hover:border-white/25 hover:bg-dark/[0.02] dark:hover:bg-white/[0.02] transition-all text-sm"
             >
               Ver projetos
             </button>
@@ -102,10 +102,10 @@ export function Hero() {
                   <Icon size={18} className="text-primary" />
                 </div>
                 <div>
-                  <p className="text-xl font-black text-dark leading-none">
+                  <p className="text-xl font-black text-dark dark:text-white leading-none">
                     <AnimatedCounter value={value} prefix={prefix} suffix={suffix} />
                   </p>
-                  <p className="text-xs text-dark/45 mt-1">{label}</p>
+                  <p className="text-xs text-dark/45 dark:text-white/45 mt-1">{label}</p>
                 </div>
               </div>
             ))}
@@ -129,8 +129,8 @@ export function Hero() {
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={13} className="fill-accent text-accent" />
               ))}
-              <span className="text-sm text-dark/50 ml-1">
-                <span className="text-dark font-semibold">4.9</span>
+              <span className="text-sm text-dark/50 dark:text-white/50 ml-1">
+                <span className="text-dark dark:text-white font-semibold">4.9</span>
                 {' '}· 50+ clientes satisfeitos
               </span>
             </div>

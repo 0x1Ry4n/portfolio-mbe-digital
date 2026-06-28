@@ -61,14 +61,14 @@ export function Portfolio() {
               Portfólio
             </div>
             <h2
-              className="reveal font-bold text-dark leading-tight"
+              className="reveal font-bold text-dark dark:text-white leading-tight"
               style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
             >
               Projetos que geram{' '}
               <span className="text-primary">resultados reais.</span>
             </h2>
           </div>
-          <p className="reveal text-dark/60 text-base max-w-sm leading-relaxed">
+          <p className="reveal text-dark/60 dark:text-white/60 text-base max-w-sm leading-relaxed">
             Cada projeto é único. Cada estratégia é desenvolvida
             do zero para o seu negócio.
           </p>
@@ -78,13 +78,13 @@ export function Portfolio() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="reveal group bg-white rounded-3xl p-8 border border-dark/[0.06] hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer"
+              className="reveal group bg-white dark:bg-[#1c1b26] rounded-3xl p-8 border border-dark/[0.06] dark:border-white/[0.06] hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500 cursor-pointer"
             >
               <div className="flex items-start justify-between mb-6">
                 <span className="text-xs font-medium text-primary/80 uppercase tracking-widest">
                   {project.category}
                 </span>
-                <div className="w-9 h-9 rounded-full border border-dark/10 flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all">
+                <div className="w-9 h-9 rounded-full border border-dark/10 dark:border-white/10 flex items-center justify-center group-hover:border-primary group-hover:bg-primary group-hover:text-white transition-all">
                   <ArrowUpRight size={16} />
                 </div>
               </div>
@@ -93,19 +93,19 @@ export function Portfolio() {
                 <div className="text-5xl font-black text-primary/12 leading-none mb-2 select-none">
                   {project.highlight}
                 </div>
-                <p className="text-xs text-dark/40 uppercase tracking-widest">
+                <p className="text-xs text-dark/40 dark:text-white/40 uppercase tracking-widest">
                   {project.highlightLabel}
                 </p>
               </div>
 
-              <h3 className="font-bold text-dark text-xl mb-3">{project.title}</h3>
-              <p className="text-dark/55 text-sm leading-relaxed mb-6">{project.description}</p>
+              <h3 className="font-bold text-dark dark:text-white text-xl mb-3">{project.title}</h3>
+              <p className="text-dark/55 dark:text-white/55 text-sm leading-relaxed mb-6">{project.description}</p>
 
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-medium text-dark/50 border border-dark/10 px-3 py-1 rounded-full"
+                    className="text-xs font-medium text-dark/50 dark:text-white/50 border border-dark/10 dark:border-white/10 px-3 py-1 rounded-full"
                   >
                     {tag}
                   </span>
