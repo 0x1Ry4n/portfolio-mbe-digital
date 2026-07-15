@@ -38,7 +38,7 @@ export function Hero() {
         <div className="max-w-4xl">
 
           {/* Badge animado com dot pulsante */}
-          <div className="hero-eyebrow mb-8">
+          {/* <div className="hero-eyebrow mb-8">
             <div className="inline-flex items-center gap-2.5 bg-accent/10 border border-accent/25 text-dark/75 dark:text-white/75 text-xs font-semibold px-4 py-2 rounded-full">
               <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
@@ -46,7 +46,7 @@ export function Hero() {
               </span>
               Vagas limitadas para novos clientes em 2026
             </div>
-          </div>
+          </div> */}
 
           {/* Headline com word-by-word reveal */}
           <h1
